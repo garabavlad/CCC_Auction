@@ -68,84 +68,10 @@ public class Main {
             }
         }
 
-        // Not need right now. Gets the winner of the bid (if any).
-        /*// Getting highest bidder:
-        Client winner = auction.GetHighestBidder();
-        int priceWinnerPayForProduct = auction.GetProductPrice();*/
-
-        // Showing highest bidder:
+        // Showing auction history:
         System.out.println();
         System.out.print(auction.GetHistory());
         System.out.println();
 
     }
-
-    // Backup before level 4
-    /*public static void main(String[] args) {
-        // Getting input:
-        String input = "1,A,5,B,10,A,8,A,14,A,17,B,17";
-
-        if(input.length()<1)
-        {
-            System.out.println("FATAL ERROR: Input string is empty!");
-            return ;
-        }
-
-        // Getting Product initial price:
-        int initialProductPrice;
-        initialProductPrice = Integer.parseInt(
-                input.substring(0,input.indexOf(',',0))
-        );
-        // Getting Product sell price:
-        int sellProductPrice;
-
-
-        // Auction initialization:
-        Auction auction = new Auction(initialProductPrice, sellProductPrice);
-
-        // Running bids into auction:
-        StringBuilder bidStream = new StringBuilder(
-                input.substring(input.indexOf(',',0)+1)+","
-        );
-        int step = 0;
-        String bidderName = "ERROR";
-        int bidderBid = -1;
-        while(bidStream.length()!=0)
-        {
-            // Getting name of bidder:
-            if(step%2==0)
-            {
-                bidderName = bidStream.substring(0,bidStream.indexOf(","));
-                bidStream.delete(0,bidStream.indexOf(",")+1);
-
-                step++;
-            }
-            // Getting bid amount:
-            else
-            {
-                bidderBid = Integer.parseInt(
-                        bidStream.substring(0,bidStream.indexOf(","))
-                );
-                bidStream.delete(0,bidStream.indexOf(",")+1);
-
-                step++;
-            }
-
-            // Running a new bid after it got Bidder's name and bid amount:
-            if(step>0 && step%2==0)
-            {
-                auction.NewBid(bidderName,bidderBid);
-            }
-        }
-
-        // Getting highest bidder:
-        Client winner = auction.GetHighestBidder();
-        int priceWinnerPayForProduct = auction.GetProductPrice();
-
-        // Showing highest bidder:
-        System.out.println();
-        System.out.print(auction.GetHistory());
-        System.out.println();
-
-    }*/
 }
